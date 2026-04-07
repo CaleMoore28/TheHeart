@@ -6,11 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/Bedroom.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
-    path: Assets/Scenes/GreenRooms.unity
-    guid: 835cdfcfb1b8c4441a55cb3bee6022df
+    path: Assets/Scenes/KingArthur.unity
+    guid: 6845b63ec232c5b49b17abf421a06ceb
+  - enabled: 1
+    path: Assets/Scenes/Photograph.unity
+    guid: b78bc19c60efba8418afb63c9a65c686
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 4d2efde157421d746bc67f4bebbb8f37, type: 2}

@@ -1,4 +1,5 @@
 {
+    "version": 1,
     "name": "XRI Default Input Actions",
     "maps": [
         {
@@ -3395,6 +3396,54 @@
                     "action": "Spawn Object",
                     "isComposite": false,
                     "isPartOfComposite": true
+                }
+            ]
+        },
+        {
+            "name": "Test",
+            "id": "40bf5ef0-4b22-4053-a53a-7d2e61ce428c",
+            "actions": [
+                {
+                    "name": "XButtonLeft",
+                    "type": "Button",
+                    "id": "dfd2f710-f9c2-45eb-8ea6-cb9f3fb80ada",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "AButtonRight",
+                    "type": "Button",
+                    "id": "39cf06b8-1378-4c75-a9e0-e80180db4f4d",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "2275b687-5874-4153-8955-fb0208bb7e1a",
+                    "path": "<XRController>{LeftHand}/{PrimaryButton}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "XButtonLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "02fd8132-1f7f-426b-a4b9-71b1f7ed7a40",
+                    "path": "<XRController>{RightHand}/{PrimaryButton}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AButtonRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
