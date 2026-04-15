@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class SceneChanger : MonoBehaviour
 {
@@ -21,9 +20,8 @@ public class SceneChanger : MonoBehaviour
 
         yield return new WaitForSeconds(screenFaderScript.fadeDuration);
 
-        SceneManager.LoadScene(sceneName);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
     }
-
 
     public void ChangeSceneAsync()
     {
@@ -36,7 +34,7 @@ public class SceneChanger : MonoBehaviour
 
         screenFaderScript.FadeOut();
 
-        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(sceneName);
+        AsyncOperation asyncOperation = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(sceneName);
         asyncOperation.allowSceneActivation = false;
 
         float timer = 0;

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class GameManager : MonoBehaviour
     public SceneChanger changer;
 
     private bool isSceneChanging;
+
+    public SceneData sceneData;
 
     void Awake()
     {
@@ -23,13 +26,16 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (AreAllFragmentsPlaced())
+        if (AreAllFragmentsPlaced() || Keyboard.current.tKey.wasPressedThisFrame)
         {
             Debug.Log("Puzzle done");
 
             if (!isSceneChanging)
             {
                 isSceneChanging = true;
+
+                sceneData.photographSceneVisited = true;
+
                 changer.ChangeSceneAsync();
             }
         }
