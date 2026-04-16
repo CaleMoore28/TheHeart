@@ -4,6 +4,8 @@ public class ObjectHighlight : MonoBehaviour
 {
     public Outline outline;
 
+    public bool isBeingSelected;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
@@ -11,15 +13,32 @@ public class ObjectHighlight : MonoBehaviour
         outline.enabled = false;
     }
 
-    public void EnableOutline()
+    // Disables outline and ability to make outline while holding
+    public void DisableOnSelect()
     {
-        Debug.Log("Outline is Enabled");
-        outline.enabled = true;
+        outline.enabled = false;
+        isBeingSelected = false;
     }
 
+    // Creates outline when hovering over if not already selected
+    public void EnableOutline()
+    {
+        if (!isBeingSelected)
+        {
+            outline.enabled = true;
+        }
+    }
+
+    // Disables outline after not hovering over
     public void DisableOutline()
     {
-        Debug.Log("Outline is Disabled");
         outline.enabled = false;
+    }
+
+    // Enables both outline and ability to enable after dropping
+    public void EnableAfterSelect()
+    {
+        outline.enabled = true;
+        isBeingSelected = true;
     }
 }

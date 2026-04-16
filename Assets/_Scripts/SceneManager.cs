@@ -1,34 +1,57 @@
+using Unity.XR.CoreUtils;
 using UnityEngine;
 
 public class SceneManager : MonoBehaviour
 {
-    public SceneData sceneData;
-
     public GameObject[] kingArthurMods;
     public GameObject[] photographMods;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public GameObject hello;
+
+    public static SceneManager instance { get; private set; }
+
+    private void Awake()
     {
-        // Sets to the opposite active state for swapping in/out objects
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+    public void UpdateRoom()
+    {
+        kingArthurMods = new GameObject[2];
+        photographMods = new GameObject[2];
+
+        kingArthurMods[0] = GameObject.Find("KInitialActive");
+        kingArthurMods[1] = GameObject.Find("KFutureActive");
+        photographMods[0] = GameObject.Find("PInitialActive");
+        photographMods[1] = GameObject.Find("PFutureActive");
 
         // Changes bedrooom scene for King Arthur changes
-        if (sceneData.kingArthurSceneVisited == true)
+        if (SceneData.instance.kingArthurSceneVisited)
         {
-            foreach (GameObject mod in kingArthurMods)
-            {
-                mod.SetActive(!mod.activeSelf);
-            }
+            kingArthurMods[0].SetActive(false);
+            kingArthurMods[1].SetActive(true);
+        }
+        else
+        {
+            kingArthurMods[0].SetActive(true);
+            kingArthurMods[1].SetActive(false);
         }
 
         // Changes bedroom scene for Photograph changes
-        if (sceneData.photographSceneVisited == true)
+        if (SceneData.instance.photographSceneVisited)
         {
-            foreach (GameObject mod in photographMods)
-            {
-                Debug.Log("reading " + mod + " with an active value of " + mod.activeSelf);
-                mod.SetActive(!mod.activeSelf);
-            }
+            photographMods[0].SetActive(false);
+            photographMods[1].SetActive(true);
+        }
+        else
+        {
+            photographMods[0].SetActive(true);
+            photographMods[1].SetActive(false);
         }
     }
 }

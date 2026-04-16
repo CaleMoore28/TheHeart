@@ -5,10 +5,21 @@ public class SceneData : MonoBehaviour
 
     public bool photographSceneVisited;
 
+    public static SceneData instance { get; private set; }
+
+
     private void Awake()
     {
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        instance = this;
+        DontDestroyOnLoad(gameObject);
+
         photographSceneVisited = false;
         kingArthurSceneVisited = false;
-        DontDestroyOnLoad(gameObject);
+;
     }
 }

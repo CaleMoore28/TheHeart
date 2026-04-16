@@ -12,8 +12,6 @@ public class GameManager : MonoBehaviour
 
     private bool isSceneChanging;
 
-    public SceneData sceneData;
-
     void Awake()
     {
         if (gameManagerInstance == null)
@@ -34,7 +32,7 @@ public class GameManager : MonoBehaviour
             {
                 isSceneChanging = true;
 
-                sceneData.photographSceneVisited = true;
+                SceneData.instance.photographSceneVisited = true;
 
                 changer.ChangeSceneAsync();
             }
