@@ -396,7 +396,7 @@ GameObject:
   - component: {fileID: 74683511}
   - component: {fileID: 74683510}
   m_Layer: 0
-  m_Name: SettingsButton
+  m_Name: CreditsButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -465,7 +465,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 74683511}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 533940099}
+        m_TargetAssemblyTypeName: NavMenuButtons, Assembly-CSharp
+        m_MethodName: ClickCredits
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &74683511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -517,7 +529,7 @@ GameObject:
   - component: {fileID: 80860138}
   - component: {fileID: 80860137}
   m_Layer: 0
-  m_Name: SettingsButton
+  m_Name: StartButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -586,7 +598,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 80860138}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 533940099}
+        m_TargetAssemblyTypeName: NavMenuButtons, Assembly-CSharp
+        m_MethodName: ClickStart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &80860138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -707,7 +731,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114894531}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 533940099}
+        m_TargetAssemblyTypeName: NavMenuButtons, Assembly-CSharp
+        m_MethodName: ClickSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &114894531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1062,6 +1098,8 @@ GameObject:
   m_Component:
   - component: {fileID: 533940097}
   - component: {fileID: 533940098}
+  - component: {fileID: 533940099}
+  - component: {fileID: 533940100}
   m_Layer: 0
   m_Name: MenuArc
   m_TagString: Untagged
@@ -1103,6 +1141,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NavFollowPlayer
   cameraTransform: {fileID: 570351107}
   smoothSpeed: 5
+--- !u!114 &533940099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 533940096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5a197c2484d8d54b8a41ecdec90e2be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NavMenuButtons
+  sceneChanger: {fileID: 533940100}
+--- !u!114 &533940100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 533940096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab342cf22b0b0f64c8e947655956dd4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneChanger
+  sceneName: Bedroom
+  reflectionTime: 0
+  screenFaderScript: {fileID: 1235767855}
 --- !u!1 &542901955
 GameObject:
   m_ObjectHideFlags: 0
@@ -7007,7 +7073,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.UI.TrackedDeviceGraphicRaycaster
   m_IgnoreReversedGraphics: 0
   m_CheckFor2DOcclusion: 0
-  m_CheckFor3DOcclusion: 0
+  m_CheckFor3DOcclusion: 1
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -7332,6 +7398,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1216488744}
   m_CullTransparentMesh: 1
+--- !u!114 &1235767855 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8549447567835993846, guid: 0a1ecabf020266845aba1ccc36546bbd, type: 3}
+  m_PrefabInstance: {fileID: 1461618324}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3215d5b8fba21b498a7ff2ace37200c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &1316360728
 GameObject:
   m_ObjectHideFlags: 0
@@ -7345,7 +7422,7 @@ GameObject:
   - component: {fileID: 1316360731}
   - component: {fileID: 1316360730}
   m_Layer: 0
-  m_Name: SettingsButton
+  m_Name: ExitButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7414,7 +7491,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1316360731}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 533940099}
+        m_TargetAssemblyTypeName: NavMenuButtons, Assembly-CSharp
+        m_MethodName: ClickExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1316360731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8271,7 +8360,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c346584eccd04fb499fcfc72c03257a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  items: []
+  items:
+  - button: {fileID: 80860137}
+    activeIndicator: {fileID: 996823045}
+    number: {fileID: 1669422552}
+    label: {fileID: 749541721}
+  - button: {fileID: 114894530}
+    activeIndicator: {fileID: 760174003}
+    number: {fileID: 1703568909}
+    label: {fileID: 1485322610}
+  - button: {fileID: 74683510}
+    activeIndicator: {fileID: 1902584866}
+    number: {fileID: 1064000519}
+    label: {fileID: 4236928}
+  - button: {fileID: 1316360730}
+    activeIndicator: {fileID: 1661561792}
+    number: {fileID: 629777907}
+    label: {fileID: 1216488746}
 --- !u!1 &1826223606
 GameObject:
   m_ObjectHideFlags: 0
@@ -8328,7 +8433,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.UI.TrackedDeviceGraphicRaycaster
   m_IgnoreReversedGraphics: 0
   m_CheckFor2DOcclusion: 0
-  m_CheckFor3DOcclusion: 0
+  m_CheckFor3DOcclusion: 1
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -8634,7 +8739,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.UI.TrackedDeviceGraphicRaycaster
   m_IgnoreReversedGraphics: 0
   m_CheckFor2DOcclusion: 0
-  m_CheckFor3DOcclusion: 0
+  m_CheckFor3DOcclusion: 1
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -8939,7 +9044,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.UI.TrackedDeviceGraphicRaycaster
   m_IgnoreReversedGraphics: 0
   m_CheckFor2DOcclusion: 0
-  m_CheckFor3DOcclusion: 0
+  m_CheckFor3DOcclusion: 1
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
