@@ -26,13 +26,11 @@ public class NavMenu : MonoBehaviour
   void Start()
   {
     // loops thru nav
-    for (int i = 0; i < items.Length; i++)
-    {
-      int index = i;
-      items[i].button.onClick.AddListener(() => SetActive(index));
-    }
-
-    // index 0 -> start: nav default
+    //for (int i = 0; i < items.Length; i++)
+    // {
+    // int index = i;
+    //items[i].button.onClick.AddListener(() => SetActive(index));
+    // }
     SetActive(0);
   }
 
@@ -42,7 +40,6 @@ public class NavMenu : MonoBehaviour
     for (int i = 0; i < items.Length; i++)
     {
       bool on = i == activeIndex;
-
       items[i].activeIndicator.color = on ? xActive : Color.clear;
       items[i].label.color = on ? yActive : yDim;
       items[i].number.color = on ? xActive : xDim;

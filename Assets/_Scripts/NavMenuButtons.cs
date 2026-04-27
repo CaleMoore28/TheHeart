@@ -1,10 +1,13 @@
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.UIElements;
 
 public class NavMenuButtons : MonoBehaviour
 {
   // SceneChanger
   public SceneChanger sceneChanger;
   public GameObject creditsScreen;
+  public GameObject settingsScreen;
   public GameObject[] menuPanels;
 
   private NavMenu navMenu;
@@ -15,8 +18,7 @@ public class NavMenuButtons : MonoBehaviour
   }
   public void Hover(int index)
   {
-    if (navMenu != null)
-      navMenu.SetActive(index);
+    navMenu.SetActive(index);
   }
 
   public void ClickStart()
@@ -26,7 +28,8 @@ public class NavMenuButtons : MonoBehaviour
 
   public void ClickSettings()
   {
-    Debug.Log("Settings Clicked");
+    settingsScreen.SetActive(true);
+    SetMenuPanels(false);
   }
 
   public void ClickCredits()
@@ -38,6 +41,12 @@ public class NavMenuButtons : MonoBehaviour
   public void CloseCreditsScreen()
   {
     creditsScreen.SetActive(false);
+    SetMenuPanels(true);
+  }
+
+  public void CloseSettingsScreen()
+  {
+    settingsScreen.SetActive(false);
     SetMenuPanels(true);
   }
 
@@ -58,4 +67,5 @@ public class NavMenuButtons : MonoBehaviour
       panel.SetActive(active);
     }
   }
+
 }
