@@ -5,6 +5,10 @@ public class NavMenuButtons : MonoBehaviour
   // SceneChanger
   public SceneChanger sceneChanger;
 
+  public GameObject creditsScreen;
+
+  public GameObject[] menuPanels;
+
   public void ClickStart()
   {
     sceneChanger.ChangeSceneAsync();
@@ -17,7 +21,14 @@ public class NavMenuButtons : MonoBehaviour
 
   public void ClickCredits()
   {
-    Debug.Log("Credits Clicked");
+    creditsScreen.SetActive(true);
+    SetMenuPanels(false);
+  }
+
+  public void CloseCreditsScreen()
+  {
+    creditsScreen.SetActive(false);
+    SetMenuPanels(true);
   }
 
   public void ClickExit()
@@ -28,5 +39,13 @@ public class NavMenuButtons : MonoBehaviour
 #else
       Application.Quit();
 #endif
+  }
+
+  private void SetMenuPanels(bool active)
+  {
+    foreach (GameObject panel in menuPanels)
+    {
+      panel.SetActive(active);
+    }
   }
 }
