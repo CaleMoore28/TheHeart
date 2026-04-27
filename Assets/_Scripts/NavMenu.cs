@@ -32,13 +32,13 @@ public class NavMenu : MonoBehaviour
       items[i].button.onClick.AddListener(() => SetActive(index));
     }
 
-    // index 0 -> Start: nav default when menu loads up
+    // index 0 -> start: nav default
     SetActive(0);
   }
 
   public void SetActive(int activeIndex)
   {
-    // loop thru items, update colors based on which one is active 
+    // update colors based on which one is active 
     for (int i = 0; i < items.Length; i++)
     {
       bool on = i == activeIndex;

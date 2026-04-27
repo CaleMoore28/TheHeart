@@ -9,7 +9,7 @@ public class NavFollowPlayer : MonoBehaviour
   {
     if (cameraTransform == null) return;
 
-    // *only* following Y axis
+    // following Y axis
     float targetYRotation = cameraTransform.eulerAngles.y;
 
     float smoothY = Mathf.LerpAngle(
