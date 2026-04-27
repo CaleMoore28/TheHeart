@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Locomotion.Turning;
 using UnityEngine.XR.Interaction.Toolkit.Locomotion.Movement;
+using Microsoft.Unity.VisualStudio.Editor;
 
 public class navMenuSettings : MonoBehaviour
 {
