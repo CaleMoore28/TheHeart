@@ -740,6 +740,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: House
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 53352d3589f6e18448a302d1f975ce50, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 53352d3589f6e18448a302d1f975ce50, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.31
@@ -4031,6 +4035,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: d7338529835e041498b001ca5043267a, type: 3}
       propertyPath: m_Name
       value: Paladin J Nordstrom
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d7338529835e041498b001ca5043267a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3099756089343826349, guid: d7338529835e041498b001ca5043267a, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
