@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Locomotion.Turning;
 using UnityEngine.XR.Interaction.Toolkit.Locomotion.Movement;
-using Microsoft.Unity.VisualStudio.Editor;
 
 public class navMenuSettings : MonoBehaviour
 {
@@ -65,7 +64,7 @@ public class navMenuSettings : MonoBehaviour
     ApplyTurnSetting();
   }
 
-  private void ApplyTurnSetting()
+  public void ApplyTurnSetting()
   {
     if (snapTurnProvider != null)
     {
@@ -77,7 +76,7 @@ public class navMenuSettings : MonoBehaviour
     }
   }
 
-  private void ApplyMoveSetting()
+  public void ApplyMoveSetting()
   {
     if (continuousMoveProvider != null)
     {
@@ -101,6 +100,10 @@ public class navMenuSettings : MonoBehaviour
     ApplyMoveSetting();
   }
 
-
-
+  public void ApplySettings()
+  {
+    ApplyTurnSetting();
+    ApplyMoveSetting();
+    ApplyVolume();
+  }
 }
