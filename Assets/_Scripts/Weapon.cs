@@ -16,6 +16,8 @@ public class Weapon : MonoBehaviour
 
   public bool isBossSpawned = false;
 
+  public GoalText goalText;
+
   public void WinTime()
   {
     if (SceneData.instance != null) // testing in editor
@@ -69,9 +71,8 @@ public class Weapon : MonoBehaviour
         isBossSpawned = true;
       }
       if (killCount >= killsToWin)
-      {
         WinTime();
-      }
     }
   }
 }
+
